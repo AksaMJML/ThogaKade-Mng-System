@@ -28,10 +28,16 @@ public class LoginFormController {
             }
             stage.show();
             new Alert(Alert.AlertType.CONFIRMATION ).show();
+            clearFields();
         }else {
             new Alert(Alert.AlertType.ERROR).show();
+            clearFields();
+        }
+    }
+
+        private void clearFields(){
             txtUserName.clear();
             txtPwd.clear();
-        }
+
     }
 }
