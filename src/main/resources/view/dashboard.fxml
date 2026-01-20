@@ -28,7 +28,7 @@
             <Font name="Gill Sans Ultra Bold" size="11.0" />
          </font>
       </Button>
-      <Button layoutX="424.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnOrderOnAction" prefHeight="46.0" prefWidth="126.0" text="ORDER DETAILS">
+      <Button layoutX="424.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnOrderDetailsOnAction" prefHeight="46.0" prefWidth="126.0" text="ORDER DETAILS">
          <font>
             <Font name="Gill Sans Ultra Bold" size="11.0" />
          </font>
