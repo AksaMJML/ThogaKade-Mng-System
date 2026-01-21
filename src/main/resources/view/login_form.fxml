@@ -7,15 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+<AnchorPane prefHeight="330.0" prefWidth="507.0" style="-fx-background-color: #0b243e;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
    <children>
-      <TextField fx:id="txtUserName" layoutX="215.0" layoutY="151.0" promptText="user name" />
-      <PasswordField fx:id="txtPwd" layoutX="215.0" layoutY="200.0" promptText="password" />
-      <Label layoutX="211.0" layoutY="41.0" prefHeight="74.0" prefWidth="162.0" text="Login Page">
+      <TextField fx:id="txtUserName" layoutX="146.0" layoutY="116.0" prefHeight="26.0" prefWidth="214.0" promptText="User Name" style="-fx-border-color: #010201; -fx-border-radius: 10px;" />
+      <PasswordField fx:id="txtPwd" layoutX="146.0" layoutY="175.0" prefHeight="26.0" prefWidth="214.0" promptText="Password" style="-fx-border-radius: 10px; -fx-border-color: #010201;" />
+      <Button fx:id="btnLogin" layoutX="198.0" layoutY="227.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="110.0" style="-fx-background-color: #fff;" text="LOGIN">
+         <font>
+            <Font name="Rockwell Bold" size="17.0" />
+         </font></Button>
+      <Label contentDisplay="CENTER" layoutX="148.0" layoutY="14.0" prefHeight="74.0" prefWidth="257.0" text="ADMIN LOGIN" textFill="WHITE">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="btnLogin" layoutX="254.0" layoutY="268.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="26.0" prefWidth="72.0" text="Login" />
    </children>
 </AnchorPane>

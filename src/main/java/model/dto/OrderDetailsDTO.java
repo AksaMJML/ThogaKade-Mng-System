@@ -1,4 +1,4 @@
-package DTO;
+package model.dto;
 
 public class OrderDetailsDTO {
     private String orderId;
