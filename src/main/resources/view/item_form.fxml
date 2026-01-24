@@ -40,13 +40,13 @@
             <Font name="Arial Black" size="20.0" />
          </font>
       </Button>
-      <TableView layoutX="26.0" layoutY="263.0" prefHeight="200.0" prefWidth="646.0">
+      <TableView fx:id="tblItemFormView" layoutX="26.0" layoutY="263.0" prefHeight="200.0" prefWidth="646.0">
         <columns>
-          <TableColumn prefWidth="86.40002250671387" text="Code" />
-          <TableColumn prefWidth="95.99994659423828" text="Pack Size" />
-            <TableColumn prefWidth="108.0" text="Unit Price" />
-            <TableColumn prefWidth="117.60003662109375" text="Quantity On Hand" />
-            <TableColumn prefWidth="238.39999389648438" text="Description" />
+          <TableColumn fx:id="colCode" prefWidth="86.40002250671387" text="Code" />
+          <TableColumn fx:id="colPackSize" prefWidth="95.99994659423828" text="Pack Size" />
+            <TableColumn fx:id="txtUnitPrice" prefWidth="108.0" text="Unit Price" />
+            <TableColumn fx:id="txtQuantity" prefWidth="117.60003662109375" text="Quantity On Hand" />
+            <TableColumn fx:id="txtDescription" prefWidth="238.39999389648438" text="Description" />
         </columns>
       </TableView>
       <Button layoutX="503.0" layoutY="475.0" mnemonicParsing="false" onAction="#btnReloadOnAction" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #1f2933; -fx-border-color: #f4b41a; -fx-border-radius: 20px; -fx-cursor: pointer;" text="RELOAD" textFill="#f7f1f1">

@@ -20,8 +20,8 @@
                 </Label>
             </children>
         </AnchorPane>
-        <TextField fx:id="txtCode" layoutX="37.0" layoutY="107.0" promptText="ID" />
-        <TextField fx:id="txtPackSize" layoutX="488.0" layoutY="107.0" promptText="Customer ID" />
+        <TextField fx:id="txtId" layoutX="37.0" layoutY="107.0" promptText="ID" />
+        <TextField fx:id="txtCusId" layoutX="488.0" layoutY="107.0" promptText="Customer ID" />
         <Button layoutX="112.0" layoutY="176.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #1f2933; -fx-border-color: #f4b41a; -fx-border-radius: 20px; -fx-cursor: pointer;" text="ADD" textFill="#f7f1f1">
             <font>
                 <Font name="Arial Black" size="20.0" />
@@ -37,11 +37,11 @@
                 <Font name="Arial Black" size="20.0" />
             </font>
         </Button>
-        <TableView layoutX="118.0" layoutY="263.0" prefHeight="200.0" prefWidth="462.0">
+        <TableView fx:id="tblOrderFormView" layoutX="118.0" layoutY="263.0" prefHeight="200.0" prefWidth="462.0">
             <columns>
-                <TableColumn prefWidth="126.40003204345703" text="ID" />
-                <TableColumn prefWidth="166.39996337890625" text="Order Date" />
-                <TableColumn prefWidth="169.59988403320312" text="Customer ID" />
+                <TableColumn fx:id="colID" prefWidth="126.40003204345703" text="ID" />
+                <TableColumn fx:id="colOrderDate" prefWidth="166.39996337890625" text="Order Date" />
+                <TableColumn fx:id="colCusId" prefWidth="169.59988403320312" text="Customer ID" />
             </columns>
         </TableView>
         <Button layoutX="441.0" layoutY="474.0" mnemonicParsing="false" onAction="#btnReloadOnAction" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #1f2933; -fx-border-color: #f4b41a; -fx-border-radius: 20px; -fx-cursor: pointer;" text="RELOAD" textFill="#f7f1f1">
@@ -49,6 +49,6 @@
                 <Font name="Arial Black" size="20.0" />
             </font>
         </Button>
-      <DatePicker layoutX="253.0" layoutY="107.0" promptText="Order Date" />
+      <DatePicker fx:id="dateOrderDate" layoutX="253.0" layoutY="107.0" promptText="Order Date" />
     </children>
 </AnchorPane>

@@ -2,15 +2,33 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 public class OrderFormController {
 
     @FXML
-    private TextField txtCode;
+    private TableColumn<?, ?> colCusId;
 
     @FXML
-    private TextField txtPackSize;
+    private TableColumn<?, ?> colID;
+
+    @FXML
+    private TableColumn<?, ?> colOrderDate;
+
+    @FXML
+    private DatePicker dateOrderDate;
+
+    @FXML
+    private TableView<?> tblOrderFormView;
+
+    @FXML
+    private TextField txtCusId;
+
+    @FXML
+    private TextField txtId;
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
@@ -33,4 +51,3 @@ public class OrderFormController {
     }
 
 }
-
