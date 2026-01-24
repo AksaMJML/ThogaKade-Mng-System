@@ -5,30 +5,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DasboardController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2b4a6e;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DasboardController">
    <children>
-      <Label layoutX="96.0" layoutY="37.0" prefHeight="18.0" prefWidth="419.0" text="Thoga Kade Management System">
+      <Label layoutX="107.0" layoutY="14.0" prefHeight="86.0" prefWidth="430.0" text="Thoga Kade Management System" textFill="#fcf7f7">
          <font>
             <Font name="Book Antiqua Bold" size="25.0" />
          </font>
       </Label>
-      <Button layoutX="58.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="46.0" prefWidth="98.0" text="CUSTOMER">
+      <Button layoutX="58.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #1b2f4a; -fx-border-color: f4b41a;" text="CUSTOMER" textFill="#fcf9f9">
          <font>
             <Font name="Gill Sans Ultra Bold" size="11.0" />
          </font>
       </Button>
-      <Button layoutX="187.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnOrderOnAction" prefHeight="46.0" prefWidth="98.0" text="ORDER">
+      <Button layoutX="187.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnOrderOnAction" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #1b2f4a; -fx-border-color: #f4b41a;" text="ORDER" textFill="#f4f0f0">
          <font>
             <Font name="Gill Sans Ultra Bold" size="11.0" />
          </font>
       </Button>
-      <Button layoutX="306.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="46.0" prefWidth="98.0" text="ITEM">
+      <Button layoutX="306.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #1b2f4a; -fx-border-color: #f4b41a;" text="ITEM" textFill="#f2ecec">
          <font>
             <Font name="Gill Sans Ultra Bold" size="11.0" />
          </font>
       </Button>
-      <Button layoutX="424.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnOrderDetailsOnAction" prefHeight="46.0" prefWidth="126.0" text="ORDER DETAILS">
+      <Button layoutX="424.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnOrderDetailsOnAction" prefHeight="46.0" prefWidth="126.0" style="-fx-background-color: #1b2f4a; -fx-border-color: #f4b41a;" text="ORDER DETAILS" textFill="#faf7f7">
          <font>
             <Font name="Gill Sans Ultra Bold" size="11.0" />
          </font>
