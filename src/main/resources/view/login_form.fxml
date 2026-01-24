@@ -11,7 +11,7 @@
    <children>
       <TextField fx:id="txtUserName" layoutX="146.0" layoutY="116.0" prefHeight="26.0" prefWidth="214.0" promptText="User Name" style="-fx-border-color: #010201; -fx-border-radius: 10px;" />
       <PasswordField fx:id="txtPwd" layoutX="146.0" layoutY="175.0" prefHeight="26.0" prefWidth="214.0" promptText="Password" style="-fx-border-radius: 10px; -fx-border-color: #010201;" />
-      <Button fx:id="btnLogin" layoutX="198.0" layoutY="227.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="110.0" style="-fx-background-color: #fff;" text="LOGIN">
+      <Button fx:id="btnLogin" layoutX="198.0" layoutY="257.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="110.0" style="-fx-background-color: #1b2f4a; -fx-border-color: #f4b41a;" text="LOGIN" textFill="#f4f1f1">
          <font>
             <Font name="Rockwell Bold" size="17.0" />
          </font></Button>
@@ -20,5 +20,6 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
+      <Button layoutX="234.0" layoutY="213.0" mnemonicParsing="false" onAction="#btnForgotPwdOnAction" prefHeight="26.0" prefWidth="121.0" text="Fotgot Password??" textFill="#1e1616" />
    </children>
 </AnchorPane>

@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -38,6 +39,11 @@ public class LoginFormController {
         private void clearFields(){
             txtUserName.clear();
             txtPwd.clear();
+
+    }
+
+    @FXML
+    void btnForgotPwdOnAction(ActionEvent event) {
 
     }
 }
