@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.OrderDetailController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="533.0" prefWidth="698.0" style="-fx-background-color: #0b243e;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderDetailController">
+    <children>
+        <AnchorPane prefHeight="56.0" prefWidth="698.0" style="-fx-background-color: #02336b;">
+            <children>
+                <Label layoutX="303.0" layoutY="10.0" text="ITEMS" textFill="#fcf4f4">
+                    <font>
+                        <Font name="Baskerville Old Face" size="30.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <TextField fx:id="txtOrderId" layoutX="39.0" layoutY="107.0" prefHeight="26.0" prefWidth="146.0" promptText="Order ID" />
+        <Button layoutX="112.0" layoutY="176.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #1f2933; -fx-border-color: #f4b41a; -fx-border-radius: 20px; -fx-cursor: pointer;" text="ADD" textFill="#f7f1f1">
+            <font>
+                <Font name="Arial Black" size="20.0" />
+            </font>
+        </Button>
+        <Button layoutX="279.0" layoutY="176.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #1f2933; -fx-border-color: #f4b41a; -fx-border-radius: 20px; -fx-cursor: pointer;" text="UPDATE" textFill="#f7f1f1">
+            <font>
+                <Font name="Arial Black" size="20.0" />
+            </font>
+        </Button>
+        <Button layoutX="450.0" layoutY="176.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #1f2933; -fx-border-color: #f4b41a; -fx-border-radius: 20px; -fx-cursor: pointer;" text="DELETE" textFill="#f7f1f1">
+            <font>
+                <Font name="Arial Black" size="20.0" />
+            </font>
+        </Button>
+        <TableView fx:id="tblOrderDetailView" layoutX="92.0" layoutY="249.0" prefHeight="200.0" prefWidth="518.0">
+            <columns>
+                <TableColumn fx:id="colOrderID" prefWidth="110.40003204345703" text="Order ID" />
+                <TableColumn fx:id="colItemCode" prefWidth="126.39996337890625" text="Item Code" />
+                <TableColumn fx:id="colQuantity" prefWidth="145.5999755859375" text="Quantity" />
+            <TableColumn fx:id="colDiscount" prefWidth="145.5999755859375" text="Discount" />
+            </columns>
+        </TableView>
+        <Button layoutX="441.0" layoutY="474.0" mnemonicParsing="false" onAction="#btnReloadOnAction" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #1f2933; -fx-border-color: #f4b41a; -fx-border-radius: 20px; -fx-cursor: pointer;" text="RELOAD" textFill="#f7f1f1">
+            <font>
+                <Font name="Arial Black" size="20.0" />
+            </font>
+        </Button>
+      <TextField fx:id="txtItemCode" layoutX="206.0" layoutY="107.0" prefHeight="26.0" prefWidth="145.0" promptText="Item Code" />
+      <TextField fx:id="txtQuantity" layoutX="373.0" layoutY="107.0" prefHeight="26.0" prefWidth="136.0" promptText="Quantity" />
+      <TextField fx:id="txtDiscount" layoutX="528.0" layoutY="107.0" prefHeight="26.0" prefWidth="136.0" promptText="Discount" />
+    </children>
 </AnchorPane>
