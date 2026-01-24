@@ -26,17 +26,17 @@
       <TextField fx:id="txtCity" layoutX="292.0" layoutY="133.0" promptText="City" />
       <TextField fx:id="txtProvince" layoutX="467.0" layoutY="133.0" promptText="Province" />
       <TextField fx:id="txtPostalCode" layoutX="650.0" layoutY="133.0" promptText="Postal Code" />
-      <Button layoutX="228.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="42.0" prefWidth="122.0" style="-fx-background-color: #1f2933;" text="ADD" textFill="#f7f1f1">
+      <Button layoutX="228.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="42.0" prefWidth="122.0" style="-fx-background-color: #1f2933; -fx-border-color: #f4b41a; -fx-border-radius: 20px; -fx-cursor: pointer;" text="ADD" textFill="#f7f1f1">
          <font>
             <Font name="Arial Black" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="559.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="42.0" prefWidth="121.0" style="-fx-background-color: #1f2933;" text="DELETE" textFill="#fcf1f1">
+      <Button layoutX="559.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="42.0" prefWidth="121.0" style="-fx-background-color: #1f2933; -fx-border-color: #f4b41a; -fx-border-radius: 20px; -fx-cursor: pointer;" text="DELETE" textFill="#fcf1f1">
          <font>
             <Font name="Arial Black" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="393.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="42.0" prefWidth="130.0" style="-fx-background-color: #1f2933;" text="UPDATE" textFill="#f7f1f1">
+      <Button layoutX="393.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="42.0" prefWidth="130.0" style="-fx-background-color: #1f2933; -fx-border-color: #f4b41a; -fx-border-radius: 20px; -fx-cursor: pointer;" text="UPDATE" textFill="#f7f1f1" >
          <font>
             <Font name="Arial Black" size="20.0" />
          </font>
@@ -54,7 +54,7 @@
             <TableColumn fx:id="colPostalCode" prefWidth="80.800048828125" text="Postal Code" />
         </columns>
       </TableView>
-      <Button layoutX="708.0" layoutY="490.0" mnemonicParsing="false" onAction="#btnReloadOnAction" prefHeight="42.0" prefWidth="121.0" style="-fx-background-color: #1f2933;" text="RELOAD" textFill="#f7f1f1">
+      <Button layoutX="708.0" layoutY="490.0" mnemonicParsing="false" onAction="#btnReloadOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #1f2933; -fx-border-color: #f4b41a; -fx-border-radius: 20px; -fx-cursor: pointer;" text="RELOAD" textFill="#f7f1f1">
          <font>
             <Font name="Arial Black" size="20.0" />
          </font>
