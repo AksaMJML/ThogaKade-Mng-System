@@ -11,24 +11,25 @@ import java.io.IOException;
 public class DasboardController {
 
     Stage stage = new Stage();
+
     @FXML
     void btnCustomerOnAction(ActionEvent event) {
-        try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/customer_form.fxml"))));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        stage.show();
+//        try {
+//            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/customer_form.fxml"))));
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        stage.show();
     }
 
     @FXML
     void btnOrderOnAction(ActionEvent event) {
-        try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/order_form.fxml"))));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        stage.show();
+//        try {
+//            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/order_form.fxml"))));
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        stage.show();
     }
 
     @FXML
@@ -44,12 +45,12 @@ public class DasboardController {
 
     @FXML
     void btnOrderDetailsOnAction(ActionEvent event) {
-        try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/order_form.fxml"))));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        stage.show();
+//        try {
+//            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/order_details_form.fxml"))));
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        stage.show();
     }
 
 }
