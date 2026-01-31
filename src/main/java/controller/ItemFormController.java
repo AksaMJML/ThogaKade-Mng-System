@@ -12,11 +12,11 @@ import model.dto.ItemDTO;
 
 public class ItemFormController {
 
-//    ObservableList<ItemDTO> itemDTOObservableList = FXCollections.observableArrayList(
-//            new ItemDTO("I001", "Item 1 Description", "10 pcs", 15.5, 100),
-//            new ItemDTO("I002", "Item 2 Description", "5 pcs", 25.0, 50),
-//            new ItemDTO("I003", "Item 3 Description", "20 pcs", 5.75, 200)
-//    );
+    ObservableList<ItemDTO> itemDTOObservableList = FXCollections.observableArrayList(
+            new ItemDTO("I001", "Item 1 Description", "10 pcs", 15.5, 100),
+            new ItemDTO("I002", "Item 2 Description", "5 pcs", 25.0, 50),
+            new ItemDTO("I003", "Item 3 Description", "20 pcs", 5.75, 200)
+    );
 
 
     @FXML
@@ -64,7 +64,7 @@ public class ItemFormController {
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
-        //System.out.println(itemDTOObservableList);
+        System.out.println(itemDTOObservableList);
     }
 
     @FXML
