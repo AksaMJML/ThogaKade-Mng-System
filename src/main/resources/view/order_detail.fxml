@@ -12,7 +12,7 @@
     <children>
         <AnchorPane prefHeight="56.0" prefWidth="698.0" style="-fx-background-color: #02336b;">
             <children>
-                <Label layoutX="303.0" layoutY="10.0" text="ITEMS" textFill="#fcf4f4">
+                <Label layoutX="226.0" layoutY="10.0" prefHeight="36.0" prefWidth="318.0" text="ORDER DETAILS" textFill="#fcf4f4">
                     <font>
                         <Font name="Baskerville Old Face" size="30.0" />
                     </font>
