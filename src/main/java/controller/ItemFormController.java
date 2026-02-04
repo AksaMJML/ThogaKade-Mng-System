@@ -10,6 +10,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import model.dto.ItemDTO;
 
+import java.sql.*;
+
 public class ItemFormController {
 
     ObservableList<ItemDTO> itemDTOObservableList = FXCollections.observableArrayList(
@@ -64,7 +66,16 @@ public class ItemFormController {
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
-        System.out.println(itemDTOObservableList);
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "741897");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM item");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            System.out.println(resultSet.next());
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @FXML
