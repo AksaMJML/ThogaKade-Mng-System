@@ -70,7 +70,9 @@ public class ItemFormController {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "741897");
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM item");
             ResultSet resultSet = preparedStatement.executeQuery();
-            System.out.println(resultSet.next());
+            while (resultSet.next()){
+                System.out.println(resultSet.getString(1)+" "+resultSet.getString(2)+" "+resultSet.getString(3)+" "+resultSet.getDouble(4)+" "+resultSet.getInt(5));
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
