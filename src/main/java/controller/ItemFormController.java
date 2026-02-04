@@ -14,11 +14,7 @@ import java.sql.*;
 
 public class ItemFormController {
 
-    ObservableList<ItemDTO> itemDTOObservableList = FXCollections.observableArrayList(
-            new ItemDTO("I001", "Item 1 Description", "10 pcs", 15.5, 100),
-            new ItemDTO("I002", "Item 2 Description", "5 pcs", 25.0, 50),
-            new ItemDTO("I003", "Item 3 Description", "20 pcs", 5.75, 200)
-    );
+    ObservableList<ItemDTO> itemDTOObservableList = FXCollections.observableArrayList();
 
 
     @FXML
@@ -71,7 +67,15 @@ public class ItemFormController {
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM item");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
-                System.out.println(resultSet.getString(1)+" "+resultSet.getString(2)+" "+resultSet.getString(3)+" "+resultSet.getDouble(4)+" "+resultSet.getInt(5));
+                ItemDTO itemDTO = new ItemDTO(
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getDouble(4),
+                        resultSet.getInt(5)
+                );
+                //itemDTOObservableList.add(itemDTO);
+                System.out.println(itemDTO);
             }
 
         } catch (SQLException e) {
