@@ -8,6 +8,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.ItemDTO;
 
 import java.sql.*;
@@ -33,7 +34,7 @@ public class ItemFormController {
     private TableColumn<?, ?> colUnitPrice;
 
     @FXML
-    private TableView<?> tblItemFormView;
+    private TableView<ItemDTO> tblItemFormView;
 
     @FXML
     private TextArea txtAreaDescription;
@@ -68,15 +69,21 @@ public class ItemFormController {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 ItemDTO itemDTO = new ItemDTO(
-                        resultSet.getString(1),
-                        resultSet.getString(2),
-                        resultSet.getString(3),
-                        resultSet.getDouble(4),
-                        resultSet.getInt(5)
+                        resultSet.getString("ItemCode"),
+                        resultSet.getString("Description"),
+                        resultSet.getString("PackSize"),
+                        resultSet.getDouble("UnitPrice"),
+                        resultSet.getInt("QtyOnHand")
                 );
-                //itemDTOObservableList.add(itemDTO);
-                System.out.println(itemDTO);
+                itemDTOObservableList.add(itemDTO);
             }
+            colCode.setCellValueFactory(new PropertyValueFactory<>("code"));
+            colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+            colPackSize.setCellValueFactory(new PropertyValueFactory<>("packSize"));
+            colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+            colQuantity.setCellValueFactory(new PropertyValueFactory<>("qtyOnHand"));
+
+            tblItemFormView.setItems(itemDTOObservableList);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
