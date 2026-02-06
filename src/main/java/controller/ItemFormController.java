@@ -101,7 +101,7 @@ public class ItemFormController implements Initializable {
     void btnDeleteOnAction(ActionEvent event) {
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade" ,  "root" , "741897");
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM item WHERE code = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM item WHERE ItemCode = ?");
             preparedStatement.setObject(1,txtCode.getText());
             preparedStatement.executeUpdate();
             loadAllItems();
