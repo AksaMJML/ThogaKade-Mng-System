@@ -73,10 +73,28 @@ public class ItemFormController implements Initializable {
     @FXML
     void btnAddOnAction(ActionEvent event) {
         String code = txtCode.getText();
-        String description = txtAreaDescription.getText();
         String packSize = txtPackSize.getText();
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         int quantity = Integer.parseInt(txtQtyOnHand.getText());
+        String description = txtAreaDescription.getText();
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade" , "root" , "741897");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO item  (?,?,?,?,? )");
+
+            preparedStatement.setObject(1 , code);
+            preparedStatement.setObject(2,packSize);
+            preparedStatement.setObject(3,unitPrice);
+            preparedStatement.setObject(4,quantity);
+            preparedStatement.setObject(5,description);
+
+            preparedStatement.execute();
+            loadAllItems();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @FXML
@@ -95,6 +113,8 @@ public class ItemFormController implements Initializable {
     }
 
     private void loadAllItems(){
+
+        itemDTOObservableList.clear();
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "741897");
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM item");
