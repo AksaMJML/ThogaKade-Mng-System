@@ -57,7 +57,7 @@ public class ItemFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
+        loadAllItems();
         colCode.setCellValueFactory(new PropertyValueFactory<>("code"));
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         colPackSize.setCellValueFactory(new PropertyValueFactory<>("packSize"));
@@ -65,11 +65,18 @@ public class ItemFormController implements Initializable {
         colQuantity.setCellValueFactory(new PropertyValueFactory<>("qtyOnHand"));
 
         tblItemFormView.setItems(itemDTOObservableList);
+
+        //combo box data load
+
     }
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
-
+        String code = txtCode.getText();
+        String description = txtAreaDescription.getText();
+        String packSize = txtPackSize.getText();
+        double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+        int quantity = Integer.parseInt(txtQtyOnHand.getText());
     }
 
     @FXML
@@ -79,28 +86,31 @@ public class ItemFormController implements Initializable {
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
-        itemDTOObservableList.clear();
-        try {
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "741897");
-                PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM item");
-                ResultSet resultSet = preparedStatement.executeQuery();
-                while (resultSet.next()){
-                    ItemDTO itemDTO = new ItemDTO(
-                            resultSet.getString("ItemCode"),
-                            resultSet.getString("Description"),
-                            resultSet.getString("PackSize"),
-                            resultSet.getDouble("UnitPrice"),
-                            resultSet.getInt("QtyOnHand")
-                    );
-                    itemDTOObservableList.add(itemDTO);
-                }
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+       // itemDTOObservableList.clear();
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
 
+    }
+
+    private void loadAllItems(){
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "741897");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM item");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                ItemDTO itemDTO = new ItemDTO(
+                        resultSet.getString("ItemCode"),
+                        resultSet.getString("Description"),
+                        resultSet.getString("PackSize"),
+                        resultSet.getDouble("UnitPrice"),
+                        resultSet.getInt("QtyOnHand")
+                );
+                itemDTOObservableList.add(itemDTO);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
