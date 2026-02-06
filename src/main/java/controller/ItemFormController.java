@@ -117,7 +117,20 @@ public class ItemFormController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade" , "root" , "741897");
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE item SET Description = ? , PackSize = ? , UnitPrice = ? , QtyOnHand = ? WHERE ItemCode = ?");
+            preparedStatement.setObject(1, txtAreaDescription.getText());
+            preparedStatement.setObject(2,txtPackSize.getText());
+            preparedStatement.setObject(3,Double.parseDouble(txtUnitPrice.getText()));
+            preparedStatement.setObject(4,Integer.parseInt(txtQtyOnHand.getText()));
+            preparedStatement.setObject(5,txtCode.getText());
 
+            preparedStatement.executeUpdate();
+            loadAllItems();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void loadAllItems(){
