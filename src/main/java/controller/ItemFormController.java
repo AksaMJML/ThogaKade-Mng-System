@@ -57,6 +57,7 @@ public class ItemFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        loadAllItems();
         colCode.setCellValueFactory(new PropertyValueFactory<>("code"));
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         colPackSize.setCellValueFactory(new PropertyValueFactory<>("packSize"));
@@ -78,6 +79,15 @@ public class ItemFormController implements Initializable {
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnUpdateOnAction(ActionEvent event) {
+
+    }
+
+    private void loadAllItems(){
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "741897");
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM item");
@@ -95,11 +105,6 @@ public class ItemFormController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    @FXML
-    void btnUpdateOnAction(ActionEvent event) {
-
     }
 
 
