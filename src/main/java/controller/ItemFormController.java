@@ -90,7 +90,7 @@ public class ItemFormController implements Initializable {
 
             preparedStatement.execute();
             loadAllItems();
-
+            clearFields();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -128,6 +128,7 @@ public class ItemFormController implements Initializable {
 
             preparedStatement.executeUpdate();
             loadAllItems();
+            clearFields();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -153,5 +154,13 @@ public class ItemFormController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void clearFields(){
+        txtCode.clear();
+        txtAreaDescription.clear();
+        txtUnitPrice.clear();
+        txtPackSize.clear();
+        txtQtyOnHand.clear();
     }
 }
