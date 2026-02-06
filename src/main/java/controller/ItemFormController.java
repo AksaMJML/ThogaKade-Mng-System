@@ -80,13 +80,13 @@ public class ItemFormController implements Initializable {
 
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade" , "root" , "741897");
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO item  (?,?,?,?,? )");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO item VALUES (?,?,?,?,? )");
 
             preparedStatement.setObject(1 , code);
-            preparedStatement.setObject(2,packSize);
-            preparedStatement.setObject(3,unitPrice);
-            preparedStatement.setObject(4,quantity);
-            preparedStatement.setObject(5,description);
+            preparedStatement.setObject(2,description);
+            preparedStatement.setObject(3,packSize);
+            preparedStatement.setObject(4,unitPrice);
+            preparedStatement.setObject(5,quantity);
 
             preparedStatement.execute();
             loadAllItems();
