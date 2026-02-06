@@ -99,7 +99,15 @@ public class ItemFormController implements Initializable {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade" ,  "root" , "741897");
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM item WHERE code = ?");
+            preparedStatement.setObject(1,txtCode.getText());
+            preparedStatement.executeUpdate();
+            loadAllItems();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
