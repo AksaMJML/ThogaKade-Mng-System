@@ -57,7 +57,7 @@ public class ItemFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        loadAllItems();
+
         colCode.setCellValueFactory(new PropertyValueFactory<>("code"));
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         colPackSize.setCellValueFactory(new PropertyValueFactory<>("packSize"));
@@ -79,33 +79,28 @@ public class ItemFormController implements Initializable {
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
-
+        itemDTOObservableList.clear();
+        try {
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "741897");
+                PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM item");
+                ResultSet resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()){
+                    ItemDTO itemDTO = new ItemDTO(
+                            resultSet.getString("ItemCode"),
+                            resultSet.getString("Description"),
+                            resultSet.getString("PackSize"),
+                            resultSet.getDouble("UnitPrice"),
+                            resultSet.getInt("QtyOnHand")
+                    );
+                    itemDTOObservableList.add(itemDTO);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
 
     }
-
-    private void loadAllItems(){
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "741897");
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM item");
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){
-                ItemDTO itemDTO = new ItemDTO(
-                        resultSet.getString("ItemCode"),
-                        resultSet.getString("Description"),
-                        resultSet.getString("PackSize"),
-                        resultSet.getDouble("UnitPrice"),
-                        resultSet.getInt("QtyOnHand")
-                );
-                itemDTOObservableList.add(itemDTO);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
 }
